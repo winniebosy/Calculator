@@ -1,0 +1,40 @@
+:root {}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {}
+
+li {
+    list-style-type: none;
+}
+
+.sr-only {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.calculator-app {
+    border: 2px solid red;
+    width: 400px;
+    height: 500px;
+    margin: auto;
+}
+
+.lines {
+    border: 2px solid red;
+}
+
+.grid-btn {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr)
+}
