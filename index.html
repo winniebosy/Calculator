@@ -10,179 +10,183 @@
 </head>
 
 <body>
-    <h1> A simple Javascript Calculator</h1>
-    <!-- calculator starts here -->
-    <article class="calculator-app" aria-label="calculator">
-        <div class="lines">
-            <span class="line" aria-hidden="true">&#9135;</span>
-            <span class="line" aria-hidden="true">&#9135;</span>
-        </div>
-        <!-- display the results of the calculation -->
-        <section class="calculator-display"></section>
-        <!-- buttons -->
-        <ul class="grid-btn">
-            <li>
-                <button>
+    <header>
+        <h1> A simple Javascript Calculator</h1>
+    </header>
+    <main>
+        <!-- calculator starts here -->
+        <article class="calculator-app" aria-label="calculator">
+            <div class="lines">
+                <span class="line1" aria-hidden="true"></span>
+                <span class="line2" aria-hidden="true"></span>
+            </div>
+            <!-- display the results of the calculation -->
+            <section class="calculator-display"></section>
+            <!-- buttons -->
+            <ul class="grid-btn">
+                <li>
+                    <button class="btn">
                     <span class="btn-percent" aria-hidden ="true">&#37;</span>
                     <span class ="sr-only">Percent</span>
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-sqroot" aria-hidden ="true">&#8730;</span>
                     <span class ="sr-only">square root</span>
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-power" aria-hidden ="true">&#8896;</span>
                     <span class ="sr-only">power</span>
                 </button>
-            </li>
-            <!-- continue from here -->
-            <li>
-                <button>
+                </li>
+                <!-- continue from here -->
+                <li>
+                    <button class="btn">
                     <span class="btn-lparentheses" aria-hidden ="true">&#40;</span>
                     <span class ="sr-only">Left Parentheses</span>
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-rparetheses" aria-hidden ="true"> &#41;</span> 
                     <span class ="sr-only">Right Paretheses</span> 
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-seven" aria-hidden ="true"> 7</span> 
                     <span class ="sr-only">Seven</span> 
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-eight" aria-hidden ="true">8</span> 
                     <span class ="sr-only">Eight</span> 
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-nine" aria-hidden ="true">9</span> 
                     <span class ="sr-only">Nine</span> 
                 </button>
-            </li>
+                </li>
 
-            <li>
-                <button>
-                    <span class="btn-del" aria-hidden ="true">Del</span> 
+                <li>
+                    <button class="btn">
+                    <span class="btn-del" aria-hidden ="true">DEL</span> 
                     <span class ="sr-only">delete</span> 
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-clear" aria-hidden ="true">AC</span> 
                     <span class ="sr-only">clear</span> 
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-four" aria-hidden ="true">4</span> 
                     <span class ="sr-only">four</span> 
                 </button>
-            </li>
+                </li>
 
-            <li>
-                <button>
+                <li>
+                    <button class="btn">
                     <span class="btn-five" aria-hidden ="true">5</span> 
                     <span class ="sr-only">five</span> 
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-six" aria-hidden ="true">6</span> 
                     <span class ="sr-only">six</span> 
                 </button>
-            </li>
-            <li>
-                <button>
-                    <span class="btn-six" aria-hidden ="true">&#10005;</span> 
+                </li>
+                <li>
+                    <button class="btn">
+                    <span class="btn-times" aria-hidden ="true">&#10005;</span> 
                     <span class ="sr-only">multiplication</span> 
                 </button>
-            </li>
-            <li>
-                <button>
-                    <span class="btn-six" aria-hidden ="true">&#247;</span> 
+                </li>
+                <li>
+                    <button class="btn">
+                    <span class="btn-divide" aria-hidden ="true">&#247;</span> 
                     <span class ="sr-only">division</span> 
                 </button>
-            </li>
+                </li>
 
-            <li>
-                <button>
+                <li>
+                    <button class="btn">
                     <span class="btn-one" aria-hidden ="true">1</span> 
                     <span class ="sr-only">one</span>
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-two" aria-hidden ="true">2</span> 
                     <span class ="sr-only">two</span>
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-three" aria-hidden ="true">3</span> 
                     <span class ="sr-only">three</span>
                 </button>
-            </li>
-            <li>
-                <button>
-                    <span class="btn-decimal" aria-hidden ="true">&#43;</span> 
+                </li>
+                <li>
+                    <button class="btn">
+                    <span class="btn-plus" aria-hidden ="true">&#43;</span> 
                     <span class ="sr-only">plus</span>
                 </button>
-            </li>
-            <li>
-                <button>
-                    <span class="btn-decimal" aria-hidden ="true">&#8722;</span> 
+                </li>
+                <li>
+                    <button class="btn">
+                    <span class="btn-minus" aria-hidden ="true">&#8722;</span> 
                     <span class ="sr-only">minus</span>
                     
                 </button>
-            </li>
-            <li>
-                <button>
-                    <span class="btn-decimal" aria-hidden ="true">0</span> 
-                    <span class ="sr-only">ZERO</span>
+                </li>
+                <li>
+                    <button class="btn">
+                    <span class="btn-zero" aria-hidden ="true">0</span> 
+                    <span class ="sr-only">ZERO</span>  
                 </button>
-            </li>
-            <li>
-                <button>
+                </li>
+                <li>
+                    <button class="btn">
                     <span class="btn-decimal" aria-hidden ="true">&#8228;</span> 
                     <span class ="sr-only">decimal</span>
 
                 </button>
-            </li>
+                </li>
 
 
-            <li>
-                <button>
-                    <span class="btn-decimal" aria-hidden ="true">EXP</span> 
+                <li>
+                    <button class="btn">
+                    <span class="btn-exp" aria-hidden ="true">EXP</span> 
                     <span class ="sr-only">exponential</span>
                 </button>
-            </li>
-            <li>
-                <button>ON</button>
-            </li>
-            <li>
-                <button>OFF</button>
-            </li>
+                </li>
+                <li>
+                    <button class="btn">
+                        <span class ="btn-on">ON </span>
+                    </button>
+                </li>
+                <li>
+                    <button class="btn">
+                        <span class ="btn-on">OFF </span>
+                    </button>
+                </li>
+            </ul>
+        </article>
+        <!-- calculator ends here -->
+    </main>
 
-        </ul>
-
-
-
-
-
-    </article>
-    <!-- calculator ends here -->
-
+    <footer> <small>Made by Winnie Bosibori<span>&copy;</span>2022</small></footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
