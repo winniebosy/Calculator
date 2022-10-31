@@ -93,6 +93,7 @@ span[class*="line"] {
     background-color: #1D2635;
     color: #ffffff;
     box-shadow: -1px -1px 1px 1px var(--border-boxshadow-color);
+    cursor: pointer;
 }
 
 .btn-del,
@@ -106,4 +107,10 @@ span[class*="line"] {
 .btn-times {
     text-align: center;
     margin-left: -0.79rem
+}
+
+.current-operand,
+.previous-operand {
+    float: right;
+    font-size: 1.1rem;
 }

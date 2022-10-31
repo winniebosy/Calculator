@@ -30,7 +30,8 @@ function divideNumbers(a, b) {
 const divide = numInput.reduce(divideNumbers)
     // console.log(divide)
 
-//function operate
+
+//functions to operate
 function operate(operator, num1, num2) {
     switch (operator) {
         case "+":
@@ -44,3 +45,50 @@ function operate(operator, num1, num2) {
     }
 
 }
+
+//number buttons
+let numberBtns = document.querySelectorAll('.btn-number')
+let operatorBtns = document.querySelectorAll('.btn-operator')
+let onBtn = document.querySelector('.btn-onn')
+let offBtn = document.querySelector('.btn-offf')
+let delBtn = document.querySelector('.btn-delete')
+let clearBtn = document.querySelector('.btn-ac')
+let storedValue = ' ';
+let currentOperand = document.querySelector('.current-operand')
+let previousOperand = document.querySelector('.previous-operand');
+let clickedOperator = ''
+let firstNumber = '';
+let result = '';
+
+currentOperand.textContent = 0;
+previousOperand.textContent;
+
+
+
+numberBtns.forEach((numBtn) => {
+    numBtn.addEventListener('click', (e) => {
+        storedValue += numBtn.value;
+        previousOperand.textContent += storedValue;
+        console.log(numBtn.value)
+    })
+})
+
+
+//resets the calculator
+clearBtn.addEventListener('click', (e) => {
+    location.reload();
+})
+
+//switches off the calcualator
+offBtn.addEventListener('click', (e) => {
+    numberBtns.forEach((numBtn) => {
+        numBtn.value = ' '
+        currentOperand.textContent = ' '
+    })
+})
+
+//switch on calculator
+onBtn.addEventListener('click', (e) => {
+    currentOperand.textContent = 0;
+    location.reload();
+})
