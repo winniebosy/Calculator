@@ -1,30 +1,46 @@
 //addition
-let numInput = [1, 200];
+let numInput = [1, 200, 5];
 
-function addNumbers(total, num) {
-    return total + num;
+//addition
+function addNumbers(a, b) {
+    return a + b;
 }
 const x = numInput.reduce(addNumbers)
-console.log(x)
+    //console.log(x)
 
 
 //subtraction
-function minusNumbers(total, num) {
-    return total - num;
+function minusNumbers(a, b) {
+    return a - b;
 }
 const sub = numInput.reduce(minusNumbers)
-console.log(sub)
+    // console.log(sub)
 
 //multiplication
 
-function multiplyNumbers(total, num) {
-    return total * num;
+function multiplyNumbers(a, b) {
+    return a * b;
 }
 const times = numInput.reduce(multiplyNumbers)
-console.log(times)
+    // console.log(times)
 
-function divideNumbers(total, num) {
-    return (total / num).toFixed(5);
+function divideNumbers(a, b) {
+    return (a / b).toFixed(5);
 }
 const divide = numInput.reduce(divideNumbers)
-console.log(divide)
+    // console.log(divide)
+
+//function operate
+function operate(operator, num1, num2) {
+    switch (operator) {
+        case "+":
+            return addNumbers(num1, num2)
+        case "-":
+            return minusNumbers(num1, num2)
+        case "*":
+            return multiplyNumbers(num1, num2)
+        case "/":
+            return divideNumbers(num1, num2)
+    }
+
+}
