@@ -96,21 +96,21 @@ span[class*="line"] {
     cursor: pointer;
 }
 
-.btn-del,
 .btn-clear,
-.btn-on,
-.btn-off,
+.btn-onn,
+.btn-offf,
 .btn-exp,
 .btn-minus,
 .btn-plus,
 .btn-divide,
-.btn-times {
+.btn-times .btn-delete {
     text-align: center;
-    margin-left: -0.79rem
+    /* margin-left: -0.78rem; */
+    font-size: 0.9rem !important;
 }
 
 .current-operand,
 .previous-operand {
     float: right;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
