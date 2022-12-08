@@ -12,6 +12,7 @@
 <body>
     <header>
         <h1 id="title"> A simple Javascript Calculator</h1>
+
     </header>
     <main>
         <!-- calculator starts here -->
@@ -21,146 +22,90 @@
                 <span class="line2" aria-hidden="true"></span>
             </div>
             <!-- display the results of the calculation -->
-            <section class="calculator-display">
-                <div class="current-operand"></div>
+            <section class="calculator-display" tabindex="0" aria-labelledby="screen">
+                <p id="screen">Display</p>
+                <div class="current-operand">0</div>
                 <div class="previous-operand"></div>
             </section>
             <!-- buttons -->
             <ul class="grid-btn">
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="Percent">
-                        %
-                </button>
+                    <button type="button" class="btn btn-operator" data-type='symbol' aria-label="Percent">%</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="square root">
-                        √
-                </button>
+                    <button type="button" class="btn btn-operator" data-type='symbol' aria-label="square root">√</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="power">
-                        ⋀
-                </button>
+                    <button type="button" class="btn btn-operator btn-symbol" aria-label="power">⋀</button>
                 </li>
                 <!-- continue from here -->
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="Left Parentheses">
-                    (
-                </button>
+                    <button type="button" class="btn btn-operator btn-symbol" aria-label="Left Parentheses">(</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="Right Paretheses">
-                    ) 
-                </button>
+                    <button type="button" class="btn btn-operator" aria-label="Right Paretheses">)</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-number" value="7">
-                     7 
-                </button>
+                    <button type="button" class="btn btn-number">7</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-number" value="8">
-                      8 
-                </button>
+                    <button type="button" class="btn btn-number">8</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-number" value="9">
-                    9  
-                </button>
+                    <button type="button" class="btn btn-number">9</button>
                 </li>
 
                 <li>
-                    <button type="button" class="btn btn-delete" value='DEL' aria-label="delete">
-                     DEL
-                </button>
+                    <button type="button" class="btn  btn-symbol btn-delete" aria-label="delete">DEL</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-ac" aria-label="clear">
-                      AC
-                </button>
+                    <button type="button" class="btn btn-ac" aria-label="clear">AC</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-number" value="4">
-                    4
-                </button>
+                    <button type="button" class="btn btn-number">4</button>
                 </li>
 
                 <li>
-                    <button type="button" class="btn btn-number" value="5">
-                        5
-                </button>
+                    <button type="button" class="btn btn-number">5</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-number" value="6">
-                       6
-                </button>
+                    <button type="button" class="btn btn-number">6</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="multiplication">
-                        ✕ 
-                </button>
+                    <button type="button" class="btn btn-operator" aria-label="multiplication">✕</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="division">
-                    / 
-                </button>
-                </li>
-
-                <li>
-                    <button type="button" class="btn btn-number" value="1">
-                    1
-                </button>
+                    <button type="button" class="btn btn-operator" aria-label="division">/</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-number" value="2">
-                    2
-                </button>
+                    <button type="button" class="btn btn-number">1</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-number" value="3">
-                      3
-                </button>
+                    <button type="button" class="btn btn-number">2</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="plus">
-                        +
-                </button>
+                    <button type="button" class="btn btn-number">3</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="minus">
-                        -
-                    
-                </button>
+                    <button type="button" class="btn btn-operator" aria-label="plus">+</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-number" value="0">
-                    0
-                </button>
+                    <button type="button" class="btn btn-operator" aria-label="minus">-</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-operator" aria-label="decimal">
-                      .
-
-                </button>
-                </li>
-
-
-                <li>
-                    <button type="button" class="btn btn-operator" aria-label="equals">
-                     =
-                </button>
+                    <button type="button" class="btn btn-number">0</button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-onn" aria-label="ON">
-                       ON
-                    </button>
+                    <button type="button" class="btn btn-operator" aria-label="decimal">.</button>
                 </li>
                 <li>
-
-                    <button type="button" class="btn btn-offf" aria-label="OFF">
-                        OFF 
-                    </button>
-
+                    <button type="button" class="btn btn-operator" aria-label="equals">=</button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-onn" aria-label="ON">ON</button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-offf" aria-label="OFF">OFF</button>
                 </li>
             </ul>
         </article>

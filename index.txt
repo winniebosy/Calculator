@@ -1,3 +1,59 @@
 -A calculator is a stateful interface. It keeps track of the previous interactions.
 -When writing raw js.. alsways include an init function to always have a function run once. Always included at the end of the a scripting file.
 -one can use the isNaN function to check whether a value is a number or not.
+-Never leave spaces in html elements. It tends to give unexpected results in js.
+for instance never do this
+<button>
+   example
+</button>
+
+instead do this
+<button> example </button>
+
+
+
+
+
+ if (e.key === 49 || e.key === '1') {
+            console.log(e.key)
+            return '1'
+
+        } else if (e.key === 50 || e.key === '2') {
+            console.log(e.key)
+            return '2'
+
+        } else if (e.key === 51 || e.key === '3') {
+            console.log(e.key)
+            return '3'
+
+        } else if (e.key === 52 || e.key === '4') {
+            console.log(e.key)
+            return '4'
+
+        } else if (e.key === 53 || e.key === '5') {
+            console.log(e.key)
+            return '5'
+
+        } else if (e.key === 54 || e.key === '6') {
+            console.log(e.key)
+            return '6'
+
+        } else if (e.key === 55 || e.key === '7') {
+            console.log(e.key)
+            return '7'
+
+        } else if (e.key === 56 || e.key === '8') {
+            console.log(e.key)
+            return '8'
+
+        } else if (e.key === 57 || e.key === '9') {
+            console.log(e.key)
+            return '9'
+
+        } else if (e.key === 48 || e.key === '0') {
+            console.log(e.key)
+            return '0'
+
+        } else {
+            return;
+        }
