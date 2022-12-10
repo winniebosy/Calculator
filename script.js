@@ -11,45 +11,61 @@ const screen = document.querySelector('.current-operand');
 
 //
 
-//CONTINUE FROM HERE!!
+
 //function to handle symbols
 function handleSymbols(symbol) {
     if (symbol === 'AC') {
         buffer = '0';
         runningTotal = 0;
+    } else if (symbol === 'Delete' || symbol === 46) {
+        buffer = '0';
+        runningTotal = 0;
+
     } else if (symbol === 27 || symbol === 'Escape') {
         buffer = '0';
         runningTotal = 0;
 
-    } else if
+    } else if (symbol === 'DEL') {
+        if (buffer.length === 1) {
+            buffer = '0';
+        } else {
+            buffer = buffer.slice(0, buffer.length - 1);
+        }
+    } else if (symbol === 'Backspace' || symbol === 8) {
+        if (buffer.length === 1) {
+            buffer = '0';
+        } else {
+            buffer = buffer.slice(0, buffer.length - 1);
+        }
+
+    } else if (symbol === '✕') {
+        handleMath(symbol);
+    } else if (symbol === '*' || symbol === 106) {
+        handleMath(symbol);
+
+    } else if (symbol === '+') {
+        handleMath(symbol);
+
+    } else if (symbol === 107) {
+        handleMath(symbol)
+    } else if (symbol === '-') {
+        handleMath(symbol)
+    } else if (symbol === 109) {
+        handleMath(symbol)
+    } else if (symbol === '/') {
+        handleMath(symbol)
+    } else if (symbol === 111) {
+        handleMath(symbol)
+    } else if (symbol === '⋀') {
+        handleMath(symbol)
+    } else {
+        return;
+    }
 
 
 }
 
-// switch (symbol) {
-//     case 'AC':
-//         if (e.key === 27 || e.key === 'Escape')
-//             buffer = '0';
-//         runningTotal = 0;
-//         break;
-//     case 'DEL':
-//         if (buffer.length === 1) {
-//             buffer = '0';
-//         } else {
-//             buffer = buffer.slice(0, buffer.length - 1);
-//         }
-//         break;
-//     case '✕':
-//     case '+':
 
-//     case '-':
-//     case '/':
-//     case '%':
-//     case '⋀':
-//         handleMath(symbol);
-//         break;
-
-// }
 
 
 
