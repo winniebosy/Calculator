@@ -14,13 +14,10 @@ const screen = document.querySelector('.current-operand');
 
 //function to handle symbols
 function handleSymbols(symbol) {
-    if (symbol === 'AC') {
-        buffer = '0';
-        runningTotal = 0;
-    } else if (symbol === 'Delete' || symbol === 46) {
-        buffer = '0';
-        runningTotal = 0;
+    if (symbol === 'AC' || symbol === 'Delete' || symbol === 46) {
 
+        buffer = '0';
+        runningTotal = 0;
     } else if (symbol === 27 || symbol === 'Escape') {
         buffer = '0';
         runningTotal = 0;
@@ -92,29 +89,22 @@ function handleMath(symbol) {
 //handle math
 
 function flushOperation(intBuffer) {
-    if (previousOperator === '✕') {
+    if (previousOperator === '✕' || previousOperator === '*' || previousOperator === 106) {
         runningTotal *= intBuffer;
-        //console.log(runningTotal)
-    } else if (previousOperator === '+') {
+    } else if (previousOperator === '+' || previousOperator === 107) {
         runningTotal += intBuffer
-            //console.log(runningTotal)
-    } else if (previousOperator === '-') {
+    } else if (previousOperator === '-' || previousOperator === 109) {
         runningTotal -= intBuffer;
-        //console.log(runningTotal)
-    } else if (previousOperator === '/') {
+    } else if (previousOperator === '/' || previousOperator === 111) {
         runningTotal /= intBuffer;
-        //console.log(runningTotal)
     } else if (previousOperator === '%') {
         runningTotal = 0
-            // console.log(runningTotal)
     } else if (previousOperator === '⋀') {
         runningTotal **= intBuffer;
-        // console.log(runningTotal)
     } else {
         runningTotal = 0;
-        // console.log(runningTotal)
     }
-
+    console.log(runningTotal)
 }
 //keyboard handlers for numbers
 
