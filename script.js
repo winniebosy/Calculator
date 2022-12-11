@@ -7,64 +7,46 @@ let previousOperator;
 
 //screen display
 const screen = document.querySelector('.current-operand');
-// let buttons
-
-//
 
 
 //function to handle symbols
 function handleSymbols(symbol) {
     if (symbol === 'AC' || symbol === 'Delete' || symbol === 46) {
-
         buffer = '0';
         runningTotal = 0;
     } else if (symbol === 27 || symbol === 'Escape') {
         buffer = '0';
         runningTotal = 0;
-
-    } else if (symbol === 'DEL') {
+    } else if (symbol === 'DEL' || symbol === 'Backspace' || symbol === 8) {
         if (buffer.length === 1) {
             buffer = '0';
         } else {
             buffer = buffer.slice(0, buffer.length - 1);
         }
-    } else if (symbol === 'Backspace' || symbol === 8) {
-        if (buffer.length === 1) {
-            buffer = '0';
-        } else {
-            buffer = buffer.slice(0, buffer.length - 1);
-        }
-
-    } else if (symbol === '✕') {
+    } else if (symbol === 'x' || symbol === '*' || symbol === 106) {
         handleMath(symbol);
-    } else if (symbol === '*' || symbol === 106) {
+    } else if (symbol === '+' || symbol === 107) {
         handleMath(symbol);
-
-    } else if (symbol === '+') {
-        handleMath(symbol);
-
-    } else if (symbol === 107) {
+    } else if (symbol === '-' || symbol === 109) {
         handleMath(symbol)
-    } else if (symbol === '-') {
-        handleMath(symbol)
-    } else if (symbol === 109) {
-        handleMath(symbol)
-    } else if (symbol === '/') {
-        handleMath(symbol)
-    } else if (symbol === 111) {
+    } else if (symbol === '/' || symbol === 111) {
         handleMath(symbol)
     } else if (symbol === '⋀') {
         handleMath(symbol)
+    } else if (symbol === '=' || symbol === 187 || symbol === 'Enter') {
+        if (previousOperator === null) {
+            //When no operation is performed
+            return;
+        }
+        flushOperation(parseInt(buffer))
+        previousOperator = null;
+        buffer = runningTotal;
+        runningTotal = 0;
+
     } else {
         return;
     }
-
-
 }
-
-
-
-
 
 //handling running totals
 function handleMath(symbol) {
@@ -86,10 +68,9 @@ function handleMath(symbol) {
     buffer = '0';
 }
 
-//handle math
-
+//handle math/calculations
 function flushOperation(intBuffer) {
-    if (previousOperator === '✕' || previousOperator === '*' || previousOperator === 106) {
+    if (previousOperator === 'x' || previousOperator === '*' || previousOperator === 106) {
         runningTotal *= intBuffer;
     } else if (previousOperator === '+' || previousOperator === 107) {
         runningTotal += intBuffer
@@ -106,10 +87,6 @@ function flushOperation(intBuffer) {
     }
     console.log(runningTotal)
 }
-//keyboard handlers for numbers
-
-
-
 
 //function to handle numbers
 function handleNumbers(numberString) {
@@ -121,9 +98,9 @@ function handleNumbers(numberString) {
         buffer = buffer + numberString;
     }
 }
-
 //function handle keyboard keys
 function keyPress(value) {
+    //checks if key pressed is a number
     if (isFinite(value)) {
         handleNumbers(value)
     } else {
@@ -131,9 +108,6 @@ function keyPress(value) {
     }
     screen.textContent = buffer;
 }
-
-
-
 //handle button clicks
 function buttonClick(value) {
     if (!isNaN(value)) {
@@ -146,6 +120,7 @@ function buttonClick(value) {
 
 //init function
 function init() {
+    //query for all calc buttons
     document.querySelectorAll('button').forEach((button) => {
         button.addEventListener('click', (e) => {
             let buttonText = e.target.textContent;
@@ -154,13 +129,12 @@ function init() {
         })
 
     });
-
+    //listeners for all key events.
     document.addEventListener('keydown', (e) => {
+        //keypress event called here
         keyPress(e.key)
         console.log(e.key)
-
     });
-
 }
 
 
